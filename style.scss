@@ -1,0 +1,224 @@
+*,*::after,*::before{
+  box-sizing: border-box;
+}
+
+// variables
+$tomato: rgb(255, 17, 0);
+$tomato: hsl(4, 100%, 67%);
+$dark-slate-grey: hsl(234, 29%, 20%);
+$grey: hsl(231, 7%, 60%);
+$white: hsl(0, 0%, 100%);
+
+// styling
+
+body{
+  margin: 0;
+  padding: 0;
+  color: $dark-slate-grey;
+}
+img{
+  width: 100%;
+}
+.body{
+  display: flex;
+  flex-direction: column;
+  .header-image{
+    margin: -1px;
+    padding: 0;
+    height: 300px;
+    width: 100%;
+    background-image: url('../assets/images/illustration-sign-up-mobile.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 20px 20px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .container{
+    padding: 1em;
+    .header{
+      font-size: 1.5em;
+      margin: 0;
+      padding: .5em 0;
+       color: $dark-slate-grey;
+    }
+    .list{
+      .child{
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        padding: 1em 0;
+        .image{
+          width: 20px;
+          height: 20px;
+        }
+        .text{
+          margin: 0;
+           color: $dark-slate-grey;
+        }
+      }
+    }
+    .form{
+      .label{
+        font-weight: 700;
+        // padding: .5em 0;
+        display: flex;
+        justify-content: space-between;
+        .text{
+          margin: 0;
+          padding: 0;
+        }
+        .error{
+          color: red;
+          display: none;
+        }
+        // position: static;
+      }
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      .input{
+        padding: .5em 1em;
+        font-size: 1.2em;
+        border-radius: 10px;
+        width: clamp(100px, 100%, 1400px);
+        margin: 0 auto;
+        border: 1px solid $grey;
+        &:highlighted{
+          outline: none;
+          border: 1px solid $grey;
+        }
+      }
+      .submit{
+        padding: 1em .5em;
+        text-align: center;
+        border-radius: 10px;
+        width: clamp(100px, 100%, 1400px);
+        margin: 0 auto;
+        font-size: 1em;
+        font-weight: 700;
+        background-color: $dark-slate-grey;
+        color: $white;
+        transition: all 300ms ease;
+        border: none;
+        &:hover{
+          background-color: $tomato;
+          box-shadow: 0 2px 5px $tomato;
+        }
+      }
+    }
+  }
+
+}
+
+.success{
+  border: 1px solid black;
+  height: 100vh;
+  display: grid;
+  display: none;
+
+  
+  .second-body{
+    font-size: 1.5em;
+    display: flex;
+    justify-content : space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 1em;
+    .top{
+    display: flex;
+    justify-content : center;
+    flex-direction: column;
+    gap: 1.5em;
+      .image{
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+  
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .header{
+        font-size: 1.5em;
+        margin: 0;
+      }
+      
+      .text{
+        margin: 0;
+        #user{
+          font-weight: 700;
+        }
+      }
+    }
+    
+    .dismiss{
+      padding: 1em .5em;
+      text-align: center;
+      border-radius: 10px;
+      width: clamp(100px, 100%, 1400px);
+      margin: 0 auto;
+      font-size: 1em;
+      font-weight: 700;
+      background-color: $dark-slate-grey;
+      color: $white;
+      transition: all 300ms ease;
+      border: none;
+      &:hover{
+          background-color: $tomato;
+          box-shadow: 0 2px 5px $tomato;
+        }
+    }
+  }
+}
+
+
+
+@media  screen and (min-width:800px ) {
+  body{
+    font-size: 20px;
+  }
+}
+@media  screen and (min-width:800px ) {
+  body{
+    font-size: 16px;
+    background-color: $dark-slate-grey;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
+  .body{
+    border-radius: 20px;
+    background-color: $white;
+    padding: 2em;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    .header-image{
+      width: 300px;
+      height: 462.52px;
+      background: url('../assets/images/illustration-sign-up-desktop.svg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .success{
+    height: max-content;
+    max-width: 500px;
+    background-color: $white;
+    border-radius: 20px;
+  }
+
+}
+
